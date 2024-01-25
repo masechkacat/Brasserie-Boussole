@@ -15,4 +15,17 @@ function displayErrorMessage() {
   container.innerHTML = '<p>Une erreur s\'est produite lors de la requête.</p>';
 }
 
-export { truncateText, displayNoResultsMessage, displayErrorMessage};
+// Debounce function: Input as function which needs to be debounced and delay is the debounced time in milliseconds
+function debounce(func, delay) {
+  let debounceTimeout;
+  return function(...args) {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      console.log("Debounced function is called");
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+
+export { truncateText, displayNoResultsMessage, displayErrorMessage, debounce};
