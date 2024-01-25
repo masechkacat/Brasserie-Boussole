@@ -1,4 +1,4 @@
-.beer-card img {
+.beer-card img, #beerImage {
   height:40vh;
   object-fit:contain;
 }
