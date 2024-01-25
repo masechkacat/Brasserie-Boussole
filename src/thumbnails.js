@@ -29,8 +29,8 @@ function createBeerElement(beer) {
 function displayBeers(beers, observer) {
   const beersContainer = document.getElementById('beer-list');
 
-  beersData = beers;
-
+  beersData = [...beersData, ...beers];
+  
   beers.forEach(beer => {
     const beerElement = createBeerElement(beer);
     beersContainer.appendChild(beerElement);
